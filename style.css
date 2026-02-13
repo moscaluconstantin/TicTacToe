@@ -203,6 +203,28 @@ h1 {
     background-size: 70%;
 }
 
+/* Rounded ends for vertical lines */
+.cell[data-index="0"],
+.cell[data-index="1"] {
+    border-top-right-radius: 3px;
+}
+
+.cell[data-index="6"],
+.cell[data-index="7"] {
+    border-bottom-right-radius: 3px;
+}
+
+/* Rounded ends for horizontal lines */
+.cell[data-index="0"],
+.cell[data-index="3"] {
+    border-bottom-left-radius: 3px;
+}
+
+.cell[data-index="2"],
+.cell[data-index="5"] {
+    border-bottom-right-radius: 3px;
+}
+
 /* Remove right border from right column */
 .cell[data-index="2"],
 .cell[data-index="5"],
