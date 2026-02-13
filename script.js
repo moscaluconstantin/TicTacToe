@@ -4,9 +4,9 @@ const statusText = document.getElementById('status');
 const statusBottom = document.getElementById('statusBottom');
 const resetBtn = document.getElementById('resetBtn');
 const startScreen = document.getElementById('startScreen');
-const circle = document.getElementById('circle');
-const circleLeft = document.getElementById('circleLeft');
-const circleRight = document.getElementById('circleRight');
+const startIcon = document.getElementById('startIcon');
+const startIconLeft = document.getElementById('startIconLeft');
+const startIconRight = document.getElementById('startIconRight');
 const gameContainer = document.getElementById('gameContainer');
 
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -26,15 +26,20 @@ const winningConditions = [
 ];
 
 // Handle start screen animation
-circle.addEventListener('click', () => {
-    circle.classList.add('splitting');
-    circleLeft.classList.add('slide');
-    circleRight.classList.add('slide');
-    
+startIcon.addEventListener('click', () => {
+    startIcon.classList.add('splitting');
+    // Show the halves immediately
+    startIconLeft.style.opacity = '1';
+    startIconRight.style.opacity = '1';
+    // Allow DOM update before sliding
+    setTimeout(() => {
+        startIconLeft.classList.add('slide');
+        startIconRight.classList.add('slide');
+    }, 10);
     setTimeout(() => {
         startScreen.classList.add('hidden');
         gameContainer.classList.add('show');
-    }, 800);
+    }, 810);
 });
 
 // Initialize game

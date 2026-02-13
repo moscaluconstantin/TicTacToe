@@ -34,10 +34,10 @@ body {
     display: none;
 }
 
-.circle {
+.start-icon {
     width: 200px;
     height: 200px;
-    background-image: url('images/hexagon-full.svg');
+    background-image: url('images/heart.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -48,17 +48,22 @@ body {
     transition: transform 0.2s ease;
     z-index: 1001;
     -webkit-tap-highlight-color: transparent;
+    position: relative;
 }
 
-.circle:hover {
+.start-icon:hover {
     transform: scale(1.05);
 }
 
-.circle.splitting {
-    opacity: 0;
+.start-icon.splitting {
+    background-image: none;
 }
 
-.circle-text {
+.start-icon.splitting .start-icon-text {
+    display: none;
+}
+
+.start-icon-text {
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
@@ -66,40 +71,35 @@ body {
     line-height: 1.5;
 }
 
-.circle-half {
+.start-icon-half {
     position: absolute;
     width: 100px;
     height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: all 0.8s ease;
-}
-
-.circle-half.left {
-    left: 50%;
-    transform: translateY(-50%) translateX(-100px);
-    background-image: url('images/hexagon-left.svg');
-}
-
-.circle-half.right {
-    right: 50%;
-    transform: translateY(-50%) translateX(100px);
-    background-image: url('images/hexagon-right.svg');
-}
-
-.circle-half.slide {
+    background-position: center;
+    top: 0;
     opacity: 1;
+    transition: transform 0.8s ease;
+    z-index: 1002;
 }
 
-.circle-half.left.slide {
-    left: -100px;
+.start-icon-half.left {
+    left: 0;
+    background-image: url('images/left.png');
 }
 
-.circle-half.right.slide {
-    right: -100px;
+.start-icon-half.right {
+    left: 100px;
+    background-image: url('images/right.png');
+}
+
+.start-icon-half.left.slide {
+    transform: translateX(-50vw);
+}
+
+.start-icon-half.right.slide {
+    transform: translateX(50vw);
 }
 
 .container {
@@ -248,7 +248,7 @@ h1 {
 }
 
 .cell.o {
-    background-image: url('images/o.svg');
+    background-image: url('images/heart.png');
 }
 
 .reset-btn {
