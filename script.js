@@ -2,7 +2,6 @@ const board = document.getElementById('board');
 const cells = document.querySelectorAll('.cell');
 const statusText = document.getElementById('status');
 const statusBottom = document.getElementById('statusBottom');
-const resetBtn = document.getElementById('resetBtn');
 const startScreen = document.getElementById('startScreen');
 const startIcon = document.getElementById('startIcon');
 const startIconLeft = document.getElementById('startIconLeft');
@@ -47,7 +46,6 @@ function initGame() {
     cells.forEach(cell => {
         cell.addEventListener('click', handleCellClick);
     });
-    resetBtn.addEventListener('click', resetGame);
 }
 
 // Handle cell click
@@ -106,7 +104,6 @@ function checkResult() {
         statusBottom.textContent = winner === 'O' ? 'my heart' : '';
         statusText.classList.add('show');
         statusBottom.classList.add('show');
-        resetBtn.classList.add('show');
         gameActive = false;
         return;
     }
@@ -116,7 +113,6 @@ function checkResult() {
         statusBottom.textContent = "It's a Draw!";
         statusText.classList.add('show');
         statusBottom.classList.add('show');
-        resetBtn.classList.add('show');
         gameActive = false;
         return;
     }
@@ -199,24 +195,6 @@ function findWinningMove(player) {
         }
     }
     return null;
-}
-
-// Reset game
-function resetGame() {
-    gameBoard = ['', '', '', '', '', '', '', '', ''];
-    gameActive = true;
-    currentPlayer = 'O';
-    moveCount = 0;
-    statusText.textContent = '';
-    statusBottom.textContent = '';
-    statusText.classList.remove('show');
-    statusBottom.classList.remove('show');
-    resetBtn.classList.remove('show');
-    
-    cells.forEach(cell => {
-        cell.textContent = '';
-        cell.classList.remove('taken', 'x', 'o');
-    });
 }
 
 // Start the game

@@ -69,6 +69,8 @@ body {
     font-weight: bold;
     text-align: center;
     line-height: 1.5;
+    z-index: 1003;
+    position: relative;
 }
 
 .start-icon-half {
@@ -117,12 +119,6 @@ body {
 
 .container.show {
     opacity: 1;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
 }
 
 .game-info {
@@ -251,48 +247,9 @@ h1 {
     background-image: url('images/heart.png');
 }
 
-.reset-btn {
-    background-color: #fff;
-    color: #000;
-    border: 3px solid #000;
-    border-radius: 25px;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    bottom: -250px;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.reset-btn.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.reset-btn:hover {
-    background-color: #fff;
-    color: #000;
-    border: 3px solid #000;
-    transform: scale(1.05);
-}
-
-.reset-btn:active {
-    background-color: #000;
-    color: #fff;
-}
-
 @media (max-width: 600px) {
     .container {
         padding: 80px 10px;
-    }
-
-    h1 {
-        font-size: 2rem;
     }
 
     .board {
@@ -323,11 +280,5 @@ h1 {
 
     .game-info:last-of-type {
         bottom: 0px;
-    }
-
-    .reset-btn {
-        bottom: -120px;
-        padding: 10px 25px;
-        font-size: 0.9rem;
     }
 }
