@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .start-screen {
@@ -112,6 +112,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: auto;
 }
 
 .container.show {
@@ -264,6 +265,10 @@ h1 {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 80px 10px;
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -283,10 +288,24 @@ h1 {
     }
 
     #status {
-        font-size: 3.6rem;
+        font-size: 3rem;
     }
 
     #statusBottom {
-        font-size: 3.6rem;
+        font-size: 3rem;
+    }
+
+    .game-info:first-child {
+        top: 0px;
+    }
+
+    .game-info:last-of-type {
+        bottom: 0px;
+    }
+
+    .reset-btn {
+        bottom: -120px;
+        padding: 10px 25px;
+        font-size: 0.9rem;
     }
 }
