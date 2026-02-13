@@ -265,6 +265,7 @@ body {
 
     .game-info p {
         font-size: 1rem;
+        margin: 5px 0;
     }
 
     #status {
@@ -276,10 +277,10 @@ body {
     }
 
     .game-info:first-child {
-        top: 0px;
+        top: 120px;
     }
 
     .game-info:last-of-type {
-        bottom: 0px;
+        bottom: 120px;
     }
 }
