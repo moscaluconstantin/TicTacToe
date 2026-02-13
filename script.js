@@ -72,7 +72,6 @@ function handleCellClick(e) {
 // Make a move
 function makeMove(index, player) {
     gameBoard[index] = player;
-    cells[index].textContent = player;
     cells[index].classList.add('taken', player.toLowerCase());
     moveCount++;
     

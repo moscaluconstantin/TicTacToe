@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     background-color: #fff;
     color: #000;
     display: flex;
@@ -35,14 +37,17 @@ body {
 .circle {
     width: 200px;
     height: 200px;
-    background-color: #000;
-    border-radius: 50%;
+    background-image: url('images/hexagon-full.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: transform 0.2s ease;
     z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .circle:hover {
@@ -65,7 +70,8 @@ body {
     position: absolute;
     width: 100px;
     height: 200px;
-    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
@@ -74,14 +80,14 @@ body {
 
 .circle-half.left {
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    border-radius: 100px 0 0 100px;
+    transform: translateY(-50%) translateX(-100px);
+    background-image: url('images/hexagon-left.svg');
 }
 
 .circle-half.right {
     right: 50%;
-    transform: translateY(-50%) translateX(50%);
-    border-radius: 0 100px 100px 0;
+    transform: translateY(-50%) translateX(100px);
+    background-image: url('images/hexagon-right.svg');
 }
 
 .circle-half.slide {
@@ -101,6 +107,11 @@ body {
     padding: 20px;
     opacity: 0;
     transition: opacity 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container.show {
@@ -114,7 +125,18 @@ h1 {
 }
 
 .game-info {
-    margin-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    pointer-events: none;
+}
+
+.game-info:first-child {
+    top: -80px;
+}
+
+.game-info:last-of-type {
+    bottom: -80px;
 }
 
 .game-info p {
@@ -155,8 +177,10 @@ h1 {
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: repeat(3, 120px);
     gap: 0;
-    margin: 0 auto 30px;
+    margin: 0;
     width: fit-content;
+    position: relative;
+    z-index: 10;
 }
 
 .cell {
@@ -172,6 +196,10 @@ h1 {
     font-weight: bold;
     color: #000;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
 }
 
 /* Remove right border from right column */
@@ -193,11 +221,11 @@ h1 {
 }
 
 .cell.x {
-    color: #333;
+    background-image: url('images/x.svg');
 }
 
 .cell.o {
-    color: #000;
+    background-image: url('images/o.svg');
 }
 
 .reset-btn {
@@ -213,6 +241,9 @@ h1 {
     letter-spacing: 1px;
     opacity: 0;
     visibility: hidden;
+    position: absolute;
+    bottom: -250px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .reset-btn.show {
