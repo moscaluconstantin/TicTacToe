@@ -103,7 +103,7 @@ function checkResult() {
     if (roundWon) {
         const winner = gameBoard[winningCombination[0]];
         statusText.textContent = winner === 'O' ? 'you won' : 'Computer Wins!';
-        statusBottom.textContent = winner === 'O' ? 'a prize' : '';
+        statusBottom.textContent = winner === 'O' ? 'my heart' : '';
         statusText.classList.add('show');
         statusBottom.classList.add('show');
         resetBtn.classList.add('show');
